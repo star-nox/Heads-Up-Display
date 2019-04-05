@@ -1,3 +1,2 @@
-# python-rfcomm-
-rfcomm server code for rpi
-android code for bluetooth communication
+# Heads Up Display
+This contains the bluetooth part of the android application and python code for making rpi work as a bluetooth server.
