@@ -32,30 +32,29 @@ try:
         if len(data) == 0:
             break
         print("Received: ", data)
+        text = data
+
+        if(data=="left"):
+            image = "left.png"
+        elif(data=="right"):
+            image = "right.png"
+        elif(data=="straight"):
+            image = "forward.png"
+        elif(data=="uturn"):
+            image = "turn.png"
+
+        #gui code 1
+
+        app = App(title="HUD HUD",width=250, height=250, bg="black")
+
+        message_box = Box(app, width="fill", align="top")
+        message = Text(message_box, text, size=13, font="Calibri", color="lightblue")
+        direction = Picture(app, image, width=50, height=50, align="bottom")
+
+        app.display()
+        
 except IOError:
     pass
-
-
-text = data
-
-if(data=="left"):
-    image = "left.png"
-elif(data=="right"):
-    image = "right.png"
-elif(data=="straight"):
-    image = "forward.png"
-elif(data=="uturn"):
-    image = "turn.png"
-
-#gui code 1
-
-app = App(title="HUD HUD",width=250, height=250, bg="black")
-
-message_box = Box(app, width="fill", align="top")
-message = Text(message_box, text, size=13, font="Calibri", color="lightblue")
-direction = Picture(app, image, width=50, height=50, align="bottom")
-
-app.display()
 
 
 print("Disconnected")
